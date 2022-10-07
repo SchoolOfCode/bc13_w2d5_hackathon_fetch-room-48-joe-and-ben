@@ -14,7 +14,7 @@ mainImage = document.querySelector ("img")
 //^^ selects the image on the page
 mainImage.src ="https://1000marken.net/wp-content/uploads/2021/01/Pokemon-logo.svg"
 
-
+     
 function randomNumberGenerator(){
     randomNumber = Math.floor(Math.random() * 150) + 1;
     fetchRandom = "https://pokeapi.co/api/v2/pokemon/" + (randomNumber + "/");
@@ -30,6 +30,10 @@ async function getQuote(){
    // logQuote=console.log(data);
     let h1 = document.querySelector("#pokedex");
     mainImage.src = data.sprites.front_default;
+   
+
+
+
     stringCap= data.name;
     h1.textContent = stringCap.charAt(0).toUpperCase() + stringCap.slice(1);
 

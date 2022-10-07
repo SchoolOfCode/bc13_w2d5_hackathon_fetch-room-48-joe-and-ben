@@ -37,13 +37,27 @@ async function getQuote(){
     h1.appendChild(newLi4);
 
     let newLi = document.createElement ('h1')
-newLi.textContent = data.height*10+ "cm";
+newLi.textContent = "Height: "+ data.height*10+ "cm";
 h1.appendChild(newLi);
 console.log(data);
 
 let newLi1 = document.createElement ('h1')
-newLi1.textContent = data.weight/10+ " KG";
+newLi1.textContent ="Weight: "+  data.weight/10+ " KG";
 h1.appendChild(newLi1);
+
+
+
+
+let newLi5 = document.createElement ('h1')
+newLi5.textContent = "Attack 1: "+ data.moves[0].move.name;
+h1.appendChild(newLi5);
+
+
+let newLi6 = document.createElement ('h1')
+newLi6.textContent = "Attack 2: "+ data.moves[1].move.name;
+h1.appendChild(newLi6);
+
+
 
 let newLi2 = document.createElement ('h1')
 newLi2.textContent = "Main type: "+ data.types[0].type.name;
@@ -52,7 +66,6 @@ h1.appendChild(newLi2);
 let newLi3 = document.createElement ('h1')
 newLi3.textContent = "Secondary type: "+ data.types[1].type.name;
 h1.appendChild(newLi3);
- //document.body.h1.appendchild(document.createElement('p'));
 }
 
 

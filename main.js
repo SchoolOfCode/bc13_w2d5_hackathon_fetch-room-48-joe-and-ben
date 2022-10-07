@@ -2,17 +2,18 @@ console.log ("working")
 let randomNumber = 0;
 let fetchRandom = 0;
 
-// thoughts thus far - 
-// investigate the APIs, see what kind of information they're giving us
-// use what we had for the Kanye West task to test out the various APIs and check that they work
-// check they work by console logging their output, if that's possible
 
-//once that's done, we decide
 console.log("Pokedex");
 const quoteButton = document.querySelector("#new-quote-button");
 let h1 = document.querySelector("#kanye-quote");
 h1.textContent = 
 quoteButton.addEventListener("click", getQuote, );
+
+
+mainImage = document.querySelector ("img")
+//^^ selects the image on the page
+mainImage.src ="https://1000marken.net/wp-content/uploads/2021/01/Pokemon-logo.svg"
+
 
 function randomNumberGenerator(){
     randomNumber = Math.floor(Math.random() * 150) + 1;
@@ -28,9 +29,19 @@ async function getQuote(){
     let data = await response.json();
    // logQuote=console.log(data);
     let h1 = document.querySelector("#kanye-quote");
+    mainImage.src = data.sprites.front_default;
     h1.textContent = data.name;
-}
 
+    let newLi = document.createElement ('h1')
+newLi.textContent = data.height*10+ "cm";
+h1.appendChild(newLi);
+console.log(data);
+
+let newLi1 = document.createElement ('h1')
+newLi1.textContent = data.weight/10+ " KG";
+h1.appendChild(newLi1);
+ //document.body.h1.appendchild(document.createElement('p'));
+}
 
 
 //^^ choose a random number for the API fetch
@@ -79,3 +90,9 @@ async function getQuote(){
 // pick out the data from the API to put into the DOM
 // test again
 //
+// thoughts thus far - 
+// investigate the APIs, see what kind of information they're giving us
+// use what we had for the Kanye West task to test out the various APIs and check that they work
+// check they work by console logging their output, if that's possible
+
+//once that's done, we decide

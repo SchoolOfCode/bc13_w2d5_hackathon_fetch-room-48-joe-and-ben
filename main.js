@@ -4,8 +4,8 @@ let fetchRandom = 0;
 
 
 console.log("Pokedex");
-const quoteButton = document.querySelector("#new-quote-button");
-let h1 = document.querySelector("#kanye-quote");
+const quoteButton = document.querySelector("#buttonChange");
+let h1 = document.querySelector("#pokedex");
 h1.textContent = 
 quoteButton.addEventListener("click", getQuote, );
 
@@ -28,9 +28,10 @@ async function getQuote(){
     let response = await fetch(fetchRandom);
     let data = await response.json();
    // logQuote=console.log(data);
-    let h1 = document.querySelector("#kanye-quote");
+    let h1 = document.querySelector("#pokedex");
     mainImage.src = data.sprites.front_default;
-    h1.textContent = data.name;
+    stringCap= data.name;
+    h1.textContent = stringCap.charAt(0).toUpperCase() + stringCap.slice(1);
 
     let newLi4 = document.createElement ('h1')
     newLi4.textContent = "Pokedex number: "+ data.id;

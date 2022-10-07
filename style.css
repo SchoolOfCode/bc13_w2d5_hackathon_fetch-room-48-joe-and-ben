@@ -1,7 +1,10 @@
 body {
-  font-family: "Oswald", sans-serif;
+  font-family: sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+h1 {
+  font-size: medium;
 }

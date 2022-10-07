@@ -7,28 +7,32 @@ console.log ("working")
 // check they work by console logging their output, if that's possible
 
 //once that's done, we decide
+console.log("Pokedex");
+const quoteButton = document.querySelector("#new-quote-button");
+let h1 = document.querySelector("#kanye-quote");
+h1.textContent = 
+quoteButton.addEventListener("click", getQuote);
+
 
 randNumber = Math.floor(Math.random() * 150) + 1;
 
 //^^ choose a random number for the API fetch
 
-fetchRandom = "https://pokeapi.co/api/v2/pokemon/" + (randNumber + "/")
+fetchRandom = "https://pokeapi.co/api/v2/pokemon/" + (randNumber + "/");
 
 //puts the number into a string and adds the closing string
 
-
-
-async function getPokemon(){
+async function getQuote(){
     let response = await fetch(fetchRandom);
     let data = await response.json();
-     console.log(data);
-
-
-
-    
+   // logQuote=console.log(data);
+    let h1 = document.querySelector("#kanye-quote");
+    h1.textContent = data.name;
 }
 
-getPokemon()
+
+
+//getPokemon()
 
 //async function getQuestions(){
 //  let response = await fetch("https://opentdb.com/api.php?amount=10");

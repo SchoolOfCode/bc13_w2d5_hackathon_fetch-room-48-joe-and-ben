@@ -32,6 +32,10 @@ async function getQuote(){
     mainImage.src = data.sprites.front_default;
     h1.textContent = data.name;
 
+    let newLi4 = document.createElement ('h1')
+    newLi4.textContent = "Pokedex number: "+ data.id;
+    h1.appendChild(newLi4);
+
     let newLi = document.createElement ('h1')
 newLi.textContent = data.height*10+ "cm";
 h1.appendChild(newLi);
@@ -40,6 +44,14 @@ console.log(data);
 let newLi1 = document.createElement ('h1')
 newLi1.textContent = data.weight/10+ " KG";
 h1.appendChild(newLi1);
+
+let newLi2 = document.createElement ('h1')
+newLi2.textContent = "Main type: "+ data.types[0].type.name;
+h1.appendChild(newLi2);
+
+let newLi3 = document.createElement ('h1')
+newLi3.textContent = "Secondary type: "+ data.types[1].type.name;
+h1.appendChild(newLi3);
  //document.body.h1.appendchild(document.createElement('p'));
 }
 

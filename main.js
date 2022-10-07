@@ -1,5 +1,6 @@
 console.log ("working")
-
+let randomNumber = 0;
+let fetchRandom = 0;
 
 // thoughts thus far - 
 // investigate the APIs, see what kind of information they're giving us
@@ -11,24 +12,28 @@ console.log("Pokedex");
 const quoteButton = document.querySelector("#new-quote-button");
 let h1 = document.querySelector("#kanye-quote");
 h1.textContent = 
-quoteButton.addEventListener("click", getQuote);
+quoteButton.addEventListener("click", getQuote, );
 
+function randomNumberGenerator(){
+    randomNumber = Math.floor(Math.random() * 150) + 1;
+    fetchRandom = "https://pokeapi.co/api/v2/pokemon/" + (randomNumber + "/");
+}
 
-randNumber = Math.floor(Math.random() * 150) + 1;
-
-//^^ choose a random number for the API fetch
-
-fetchRandom = "https://pokeapi.co/api/v2/pokemon/" + (randNumber + "/");
 
 //puts the number into a string and adds the closing string
 
 async function getQuote(){
+    randomNumberGenerator();
     let response = await fetch(fetchRandom);
     let data = await response.json();
    // logQuote=console.log(data);
     let h1 = document.querySelector("#kanye-quote");
     h1.textContent = data.name;
 }
+
+
+
+//^^ choose a random number for the API fetch
 
 
 

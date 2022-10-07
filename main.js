@@ -30,7 +30,8 @@ async function getQuote(){
    // logQuote=console.log(data);
     let h1 = document.querySelector("#kanye-quote");
     mainImage.src = data.sprites.front_default;
-    h1.textContent = data.name;
+    stringCap= data.name;
+    h1.textContent = stringCap.charAt(0).toUpperCase() + stringCap.slice(1)
 
     let newLi4 = document.createElement ('h1')
     newLi4.textContent = "Pokedex number: "+ data.id;
